@@ -141,20 +141,20 @@ for i in range(NUM_REPORTS):
 
         
         if reportRequest.status_code == 200:
-            Write.Print(f"[{i}]{get_username_from_userid(ROBLOX_USER_ID)} Was successfully reported \n", Colors.purple_to_blue, interval=0.0025)
+            Write.Print(f"[{i}]{get_username_from_userid(ROBLOX_USER_ID)} Was successfully reported \n", Colors.red_to_yellow, interval=0.0025)
             
             global validReports
             validReports += 1
         elif reportRequest.status_code == 429:
-            Write.Print(f"[{i}]Rate Limited while reporting {get_username_from_userid(ROBLOX_USER_ID)} going on cooldown for 10 mins. \n", Colors.purple_to_blue, interval=0.0025)
+            Write.Print(f"[{i}]Rate Limited while reporting {get_username_from_userid(ROBLOX_USER_ID)} going on cooldown for 10 mins. \n", Colors.red_to_yellow, interval=0.0025)
             time.sleep(600) #10 Minute Cooldown (in seconds)
         else:
-            Write.Print(f"[{i}]Failed to report {get_username_from_userid(ROBLOX_USER_ID)}. \n", Colors.purple_to_blue, interval=0.0025)
+            Write.Print(f"[{i}]Failed to report {get_username_from_userid(ROBLOX_USER_ID)}. \n", Colors.red_to_yellow, interval=0.0025)
     else:
         Ididthistofixindentationcocksuckers +=1
         
         time.sleep(REPORT_INTERVAL) 
 
 
-Write.Print(f"Reports attempts made for {get_username_from_userid(ROBLOX_USER_ID)}: {NUM_REPORTS}. Successful: {ValidReports}", Colors.purple_to_blue, interval=0.0025) # Modify if validReports tracking is fixed
-Write.Input("Press Enter to exit.", Colors.purple_to_blue, interval=0.0025)
+Write.Print(f"Reports attempts made for {get_username_from_userid(ROBLOX_USER_ID)}: {NUM_REPORTS}. Successful: {ValidReports}", Colors.red_to_yellow, interval=0.0025) # Modify if validReports tracking is fixed
+Write.Input("Press Enter to exit.", Colors.red_to_yellow, interval=0.0025)
